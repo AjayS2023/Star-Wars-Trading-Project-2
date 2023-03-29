@@ -6,7 +6,7 @@ const mainRoutes = require('./routes/mainRoutes');
 
 const app = express();
 
-let port = 3000;
+let port = 3000 || process.env.PORT;
 let host = 'localhost';
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
