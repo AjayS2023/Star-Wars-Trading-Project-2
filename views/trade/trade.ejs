@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="trade">
+            <img src="<%= trade.image %>" alt="<%= trade.name %>" class="image">
+            <p> <%= trade.name %> owned by <%= trade.owner %> </p>
+
+            <br>
+            
+            <h4> <%= trade.status %> <%= trade.name %> </h4>
+            <p> <%= trade.details %> </p>
+            
+            <form>
+                <input type="hidden" name="trade-id" value="<%= trade.id %>">
+                <input type="hidden" name="status" value="<%= trade.status %>">
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary mb-3" formmethod="GET" formaction="/trades/<%= trade.id %>/edit"> Edit </button>
+                    <button type="submit" class="btn btn-danger mb-3" formmethod="POST" formaction="/trades/<%= trade.id %>?_method=DELETE"> Delete</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

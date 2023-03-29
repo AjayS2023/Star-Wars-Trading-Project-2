@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs') %>
+    <main>
+        <div class="form-container">
+            <form method="POST" action="/trades/<%=trade.id%>?_method=PUT">
+                <label for="category" class="form-label">Category</label>
+                <div class="dropdown">
+                    <select class="form-select" name="category" id="category" required>
+                        <option value="" selected disabled>Select category</option>
+                        <option value="prequel">Prequel Trilogy</option>
+                        <option value="original">Original Trilogy</option>
+                        <option value="sequel">Sequel Trilogy</option>
+                    </select>
+                </div>
+                <input type="hidden" name="owner" value="<%= trade.owner %>">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <div class="dropdown">
+                        <select class="form-select" name="status" id="status" required>
+                            <option value="" selected disabled>Select status</option>
+                            <option value="Used">Used</option>
+                            <option value="New">New</option>
+                        </select>
+                    </div>                    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Details</label>
+                    <textarea class="form-control" name="details" id="details" rows="3" placeholder="Description"
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input type="text" class="form-control" name="image" id="image" placeholder="Image" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark mb-3"> Submit </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

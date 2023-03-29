@@ -1,0 +1,81 @@
+img{
+    width: 30;
+}
+
+.form-container, .trades, .about, .trade, .contact{
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.trade-items{
+    margin-left: 5%;
+    line-height: 200%;
+    color: black;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.image{
+    width: 40%;
+}
+
+div > p {
+    padding-left: 5%;
+}
+
+.fa-brands{
+    font-size: 2em;
+    width: 30px;
+}
+
+.fa-facebook{
+    margin-right: 10px;
+    color: white;
+}
+
+.fa-square-twitter{
+    color: white;
+}
+
+main{
+    margin-bottom: 10%;
+}
+
+.items a{
+    color: black;
+}
+
+.error a{
+    color: blue;
+}
+
+div.error{
+    margin-left: 25%;
+}
+
+.trades a{
+    color: blue;
+}
+
+.trades a{
+    color: black;
+}
+
+div.contact img{
+    width: 40%;
+}
+
+div.about img{
+    width: 40%;
+}

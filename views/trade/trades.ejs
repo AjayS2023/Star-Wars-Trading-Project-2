@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="trades">
+            <% const prequelItems = trades.filter(trade => trade.category === 'prequel'); %>
+            <% const originalItems = trades.filter(trade => trade.category === 'original'); %>
+            <% const sequelItems = trades.filter(trade => trade.category === 'sequel'); %>            
+            
+            <% if(!prequelItems.length && !originalItems.length && !sequelItems.length){ %>
+                <h2>There are no trade items.</h2>
+                <img src="/images/kenobi.webp" alt="hello">
+                <p>Click <a href="/trades/new"> here </a> to make a new trade item!</p>
+            <% } else {%>
+                <h2>Select a trade item across these three categories.</h2>
+            <% } %>
+
+            <% if(prequelItems.length){ %>
+                <h3>Prequel Trilogy Items</h3>
+                <div class="trade-items">
+                    <% prequelItems.forEach(trade => { %>
+                        <a href="/trades/<%=trade.id%>"> <p><%= trade.name %></p></a>
+                    <% }); %>
+                </div>
+            <% } %>
+            
+            <% if(originalItems.length){ %>
+                <h3>Original Trilogy Items</h3>
+                <div class="trade-items">
+                    <% originalItems.forEach(trade => { %>
+                        <a href="/trades/<%=trade.id%>"> <p><%= trade.name %></p></a>
+                    <% }); %>
+                </div>
+            <% } %>
+            
+            <% if(sequelItems.length){ %>
+                <h3>Sequel Trilogy Items</h3>
+                <div class="trade-items">
+                    <% sequelItems.forEach(trade => { %>
+                        <a href="/trades/<%=trade.id%>"> <p><%= trade.name %></p></a>
+                    <% }); %>
+                </div>
+            <% } %>
+            
+        </div>
+    </main>
+<%- include('../partials/footer.ejs') %>

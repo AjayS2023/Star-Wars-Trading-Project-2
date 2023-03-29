@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<main>
+    <div class="error">
+        <h3>Error <%= error.status %></h3>
+        <p><%= error.message %></p>
+
+        <% if(error.status === 404) { %>
+            <img src="/images/error-images/kenobi-lost.webp" alt="obi-wan quote">
+        <% } %>
+
+        <% if(error.status === 500) { %>
+            <img src="/images/error-images/yoda-fail.webp" alt="yoda quote">
+        <% } %>
+
+        <p>Find your way back by clicking <a href="/">here </a> to access the home page.</p>
+    </div>
+</main>
+<%- include('./partials/footer') %>
